@@ -1,6 +1,6 @@
 {
-  "name": "Ember-CRUD-Desktop-Mobile",
-  "description": "How to create a nice simple Ember JS app with cool transitions",
+  "name": "weekjuice",
+  "description": "One doable, weekly goal for developers who want to be impressive at work.",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -8,6 +8,6 @@
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-sass": "~0.4.1",
-    "grunt-ember-templates": "*"
+    "grunt-ember-templates": "*",
   }
 }

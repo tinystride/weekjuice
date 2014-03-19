@@ -1,0 +1,12 @@
+<hr>
+
+<div>
+  <p>{{randomPost.primary_content}}</p>
+  <div>{{#link-to "post" randomPost }}{{formatDate randomPost.creationDate}}{{/link-to}}</div>
+</div>
+
+<hr>
+
+<footer>
+  {{#link-to "posts"}}More weekjuices{{/link-to}}
+</footer>
