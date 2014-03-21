@@ -1,7 +1,17 @@
 <div class="posts-listing">
+  <ul>
   {{#each post in controller}}
-    <p>{{post.content}}</p>
+    <li>
+      <p><b>Content:</b> {{post.content}}</p>
+      {{#if post.sourceNote}}
+        <p><b>Note:</b> <i>{{post.sourceNote}}</i></p>
+        <a target="_blank" {{bindAttr href="post.sourceUrl"}}>{{post.sourceTitle}}</a>
+      {{/if}}
+    </li>
   {{else}}
-    <p>ack! no posts.</p>
+    <li>
+      <p>ack! no posts.</p>
+    </li>
   {{/each}}
+  </ul>
 </div>
