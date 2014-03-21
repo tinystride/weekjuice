@@ -7,6 +7,7 @@
         <p><b>Note:</b> <i>{{post.sourceNote}}</i></p>
         <a target="_blank" {{bindAttr href="post.sourceUrl"}}>{{post.sourceTitle}}</a>
       {{/if}}
+      {{#link-to "post" post}}Permalink{{/link-to}}
     </li>
   {{else}}
     <li>

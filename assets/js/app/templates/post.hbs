@@ -1,0 +1,6 @@
+<p><b>Content:</b> {{content}}</p>
+{{#if sourceNote}}
+  <p><b>Note:</b> <i>{{sourceNote}}</i></p>
+  <a target="_blank" {{bindAttr href="sourceUrl"}}>{{sourceTitle}}</a>
+{{/if}}
+<span>Posted on {{creationDate}}</span>
