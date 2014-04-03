@@ -2,7 +2,7 @@
   <ul>
   {{#each post in controller}}
     <li>
-      <p><b>Content:</b> {{post.content}}</p>
+      <p><b>Content:</b> {{post.primary_content}}</p>
       {{#if post.sourceNote}}
         <p><b>Note:</b> <i>{{post.sourceNote}}</i></p>
         <a target="_blank" {{bindAttr href="post.sourceUrl"}}>{{post.sourceTitle}}</a>
@@ -15,4 +15,11 @@
     </li>
   {{/each}}
   </ul>
+
+  {{outlet}}
+
+</div>
+<div>
+  <h4>This is the random post:</h4>
+  <p>{{randomPost.primary_content}}</p>
 </div>
