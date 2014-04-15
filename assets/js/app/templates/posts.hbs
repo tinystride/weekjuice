@@ -2,12 +2,12 @@
   <ul>
   {{#each post in controller}}
     <li>
-      <p><b>Content:</b> {{post.primary_content}}</p>
+      <p>{{post.primary_content}}</p>
       {{#if post.sourceNote}}
         <p><b>Note:</b> <i>{{post.sourceNote}}</i></p>
         <a target="_blank" {{bindAttr href="post.sourceUrl"}}>{{post.sourceTitle}}</a>
       {{/if}}
-      {{#link-to "post" post}}Permalink{{/link-to}}
+      <div>Posted {{#link-to "post" post}}{{formatDate creationDate}}{{/link-to}}</div>
     </li>
   {{else}}
     <li>
