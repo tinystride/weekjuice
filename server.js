@@ -1,7 +1,8 @@
 var schedule = require('node-schedule');
 
 var rule = new schedule.RecurrenceRule();
-rule.minute = 45;
+rule.dayOfWeek = [1];
+
 
 function randomNumber() {
   var randomItem = Math.random();
