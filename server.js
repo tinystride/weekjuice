@@ -1,7 +1,10 @@
+var express = require('express');
+var app = express();
+
 var schedule = require('node-schedule');
 
 var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [1];
+rule.dayOfWeek = 1;
 
 
 function randomNumber() {
