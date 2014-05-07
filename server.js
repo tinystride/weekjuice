@@ -1,17 +1,36 @@
-var express = require('express');
-var app = express();
+// query Firebase for total number of posts:
 
-var schedule = require('node-schedule');
+var Firebase = require('firebase');
+var rootRef = new Firebase('https://glowing-fire-6569.firebaseio.com/posts');
+var postsCount;
 
-var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = 1;
+rootRef.on('value', function(snapshot) {
+  if(snapshot.val() === null) {
+    alert("Oops, no data here partner.");
+  } else {
+    postsCount = snapshot.numChildren();
+    console.log('Total number of posts: ' + postsCount);
+  }
+});
 
+// assign a random post:
 
-function randomNumber() {
-  var randomItem = Math.random();
+function currentPostIndex() {
+  var randomItem = Math.floor(Math.random()*postsCount);
+  console.log(randomItem);
   return randomItem;
 };
 
-var j = schedule.scheduleJob(rule, function() {
-  console.log(randomNumber());
+// set up node-schedule job:
+
+var schedule = require('node-schedule');
+var rule = new schedule.RecurrenceRule();
+rule.minute = [new schedule.Range(0, 59)];
+
+// initiate node-schedule job to update
+// currentPostId in the database:
+
+var job = schedule.scheduleJob(rule, function() {
+  var currentPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPostId');
+  currentPostRef.set(currentPostIndex());
 });
