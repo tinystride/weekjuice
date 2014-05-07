@@ -10,6 +10,7 @@
     "grunt-contrib-sass": "~0.4.1",
     "grunt-ember-templates": "*",
     "node-schedule": "^0.1.13",
-    "express": "^4.1.1"
+    "express": "^4.1.1",
+    "request-json": "^0.4.10"
   }
 }
