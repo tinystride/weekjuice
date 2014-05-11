@@ -1,34 +1,36 @@
-function postsCounter() {
-  request = require('request-json');
-  var client = request.newClient('https://glowing-fire-6569.firebaseio.com');
+// query Firebase for total number of posts:
 
-  function postsCount() {
-    client.get('posts.json', function(err, res, body) {
-      if (!err) {
-        var result = body.length;
-        return result;
-      }
-    });
+var Firebase = require('firebase');
+var rootRef = new Firebase('https://glowing-fire-6569.firebaseio.com/posts');
+var postsCount;
+
+rootRef.on('value', function(snapshot) {
+  if(snapshot.val() === null) {
+    alert("Oops, no data here partner.");
+  } else {
+    postsCount = snapshot.numChildren();
+    console.log('Total number of posts: ' + postsCount);
   }
+});
 
-  return postsCount();
-};
+// assign a random post:
 
-console.log(postsCounter());
-
-var schedule = require('node-schedule');
-
-var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = 1;
-rule.second = [new schedule.Range(0, 59)];
-
-
-function randomNumber() {
-  var numberOfPosts = postsCounter();
-  var randomItem = Math.floor(Math.random()*numberOfPosts);
+function randomPostId() {
+  var randomItem = Math.floor(Math.random()*postsCount);
   return randomItem;
 };
 
-var j = schedule.scheduleJob(rule, function() {
-  console.log(randomNumber());
+// set up node-schedule job:
+
+var schedule = require('node-schedule');
+var rule = new schedule.RecurrenceRule();
+rule.second = [new schedule.Range(0, 59)];
+
+// initiate node-schedule job to update
+// randomPost id in the database:
+
+var job = schedule.scheduleJob(rule, function() {
+  var randomPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/randomPost');
+  console.log(randomPostId());
+  randomPostRef.set(randomPostId());
 });
