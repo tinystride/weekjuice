@@ -21,12 +21,12 @@ module.exports = (grunt) ->
       libs:
         src: [
           "assets/js/libs/jquery-2.0.3.min.js"
-          "assets/js/libs/createUsersInLocalStorage.js"
           "assets/js/libs/handlebars-1.0.0.js"
           "assets/js/libs/ember-1.1.2.js"
           "assets/js/libs/ember-data-1.0.0-beta.3.js"
           "assets/js/libs/localstorage_adapter.js"
           "assets/js/libs/moment.min.js"
+          "assets/js/libs/emberfire.js"
         ]
         dest: "assets/js/libs.js"
 
