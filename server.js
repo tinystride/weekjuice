@@ -15,8 +15,9 @@ rootRef.on('value', function(snapshot) {
 
 // assign a random post:
 
-function randomPostId() {
+function randomPostIndex() {
   var randomItem = Math.floor(Math.random()*postsCount);
+  console.log(randomItem);
   return randomItem;
 };
 
@@ -24,13 +25,12 @@ function randomPostId() {
 
 var schedule = require('node-schedule');
 var rule = new schedule.RecurrenceRule();
-rule.second = [new schedule.Range(0, 59)];
+rule.minute = [new schedule.Range(0, 59)];
 
 // initiate node-schedule job to update
 // randomPost id in the database:
 
 var job = schedule.scheduleJob(rule, function() {
   var randomPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/randomPost');
-  console.log(randomPostId());
-  randomPostRef.set(randomPostId());
+  randomPostRef.set(randomPostIndex());
 });
