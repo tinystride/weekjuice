@@ -1,9 +1,23 @@
 App.ApplicationController = Ember.ArrayController.extend({
   sortProperties: ['creationDate'],
 
-  randomPost: function() {
-    var itemsCount = this.get('length');
-    var randomItem = (Math.floor(Math.random()*itemsCount));
-    return this.objectAt(randomItem);
-  }.property('length')
+  setupCurrentPostListener: function() {
+    var currentPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPostId');
+    var self = this;
+
+    currentPostRef.on('value', function(snapshot) {
+      self.set('currentPostId', snapshot.val().toString());
+    });
+  }.on('init'),
+
+  currentPost: function() {
+    var length = this.get('length');
+    var currentPostId = this.get('currentPostId');
+
+    if (length == 0 || !currentPostId ) {
+      return;
+    };
+
+    return this.findBy('id', currentPostId);
+  }.property('@each.id', 'currentPostId')
 });

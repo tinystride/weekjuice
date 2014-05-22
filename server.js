@@ -28,9 +28,9 @@ var rule = new schedule.RecurrenceRule();
 rule.minute = [new schedule.Range(0, 59)];
 
 // initiate node-schedule job to update
-// currentPost id in the database:
+// currentPostId in the database:
 
 var job = schedule.scheduleJob(rule, function() {
-  var currentPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPost');
+  var currentPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPostId');
   currentPostRef.set(currentPostIndex());
 });
