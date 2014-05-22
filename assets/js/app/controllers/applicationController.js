@@ -1,26 +1,23 @@
 App.ApplicationController = Ember.ArrayController.extend({
   sortProperties: ['creationDate'],
 
-  randomPost: function() {
-    var itemsCount = this.get('length');
+  setupCurrentPostListener: function() {
+    var currentPostRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPostId');
+    var self = this;
 
-    var randomItemNumber;
-
-    function retrieveRandomItemNumber() {
-      return $.ajax({
-        url: "https://glowing-fire-6569.firebaseio.com/currentPost.json",
-        dataType: 'json'
-      });
-    }
-
-    var setRandomItem = retrieveRandomItemNumber().done(function(result) {
-      var randomItemNumber = result;
-      // I think I just need to fix this "this"
-      // scoping error for the program to work.
-      return this.objectAt(randomItemNumber);
-    }).fail(function() {
-      console.log( "Oops, the promise failed." );
+    currentPostRef.on('value', function(snapshot) {
+      self.set('currentPostId', snapshot.val().toString());
     });
+  }.on('init'),
 
-  }.property('length')
+  currentPost: function() {
+    var length = this.get('length');
+    var currentPostId = this.get('currentPostId');
+
+    if (length == 0 || !currentPostId ) {
+      return;
+    };
+
+    return this.findBy('id', currentPostId);
+  }.property('@each.id', 'currentPostId')
 });
