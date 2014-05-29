@@ -1,8 +1,10 @@
-<section>
-  <p>{{currentPost.primary_content}}</p>
-  {{#link-to "post" currentPost }}—Week No. {{weekNumber}}{{/link-to}}
+<section class="l--sp_top-large">
+  <article>
+    <p class="t--huge t--bold">{{currentPost.primary_content}}</p>
+    {{#link-to "post" currentPost classNames="l--sp_top-med l--block"}}—Week No. {{weekNumber}}{{/link-to}}
+  </article>
 </section>
 
-<footer>
-  <p>A tiny project by <a href="http://twitter.com/neilrenicker" title="Neil Renicker on Twitter">Neil Renicker</a>.</p>
+<footer class="l--sp_top-large">
+  <p class="t--tiny">A tiny project by <a href="http://twitter.com/neilrenicker" title="Neil Renicker on Twitter">Neil Renicker</a>.</p>
 </footer>

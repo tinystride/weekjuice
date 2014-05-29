@@ -1,1 +1,54 @@
-@import "shame";
+@import "_inbox";
+
+@import "_reset";
+
+$site-max-width: 55em;
+$bp-small: 35em;
+
+// layout
+
+.l--container {
+  margin: 0 1em;
+
+  @media (min-width: $bp-small) {
+    margin: 0 5%;
+  }
+
+  @media (min-width: $site-max-width) {
+    margin: 0 auto;
+  }
+}
+
+.l--max-width {
+  max-width: $site-max-width;
+}
+
+.l--block {
+  display: block;
+}
+
+.l--sp_top-large {
+  margin-top: 4em;
+}
+
+.l--sp_top-med {
+  margin-top: 2em;
+}
+
+.l--sp_top-tiny {
+  margin-top: .5em;
+}
+
+// text
+
+.t--tiny {
+  font-size: .8em;
+}
+
+.t--huge {
+  font-size: 3.5em;
+}
+
+.t--bold {
+  font-weight: bold;
+}
