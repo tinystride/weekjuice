@@ -1,13 +1,12 @@
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON("package.json")
-    sass:
+
+    compass:
       dist:
         options:
-          style: "compact"
-
-        files:
-          "assets/css/style.css": "assets/scss/style.scss"
+          sassDir: 'assets/scss'
+          cssDir: 'assets/css'
 
     emberTemplates:
       compile:
@@ -37,7 +36,7 @@ module.exports = (grunt) ->
     watch:
       sass:
         files: "assets/scss/*.scss"
-        tasks: ["sass"]
+        tasks: ["compass"]
 
       emberTemplates:
         files: "assets/js/app/templates/**/*.hbs"
@@ -54,12 +53,12 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-concat"
-  grunt.loadNpmTasks "grunt-contrib-sass"
+  grunt.loadNpmTasks "grunt-contrib-compass"
   grunt.loadNpmTasks "grunt-ember-templates"
-  
+
   # Default task(s).
   grunt.registerTask "default", [
-    "sass"
+    "compass"
     "concat"
     "emberTemplates"
   ]

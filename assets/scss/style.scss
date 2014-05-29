@@ -1,1 +1,97 @@
-@import "shame";
+//** VARIABLES **//
+
+$c--brand: #b8ecb3;
+$c--brand_dark: #455643;
+
+@import 'compass';
+
+@import '_inbox';
+@import '_reset';
+
+$site-max-width: 55em;
+$bp-small: 35em;
+
+//** LAYOUT **//
+
+.l--container {
+  margin: 0 1em;
+
+  @media (min-width: $bp-small) {
+    margin: 0 5%;
+  }
+
+  @media (min-width: $site-max-width) {
+    margin: 0 auto;
+  }
+}
+
+.l--max-width {
+  max-width: $site-max-width;
+}
+
+.l--block {
+  display: block;
+}
+
+.l--sp_top-large {
+  margin-top: 5em;
+}
+
+.l--sp_top-med {
+  margin-top: 2em;
+}
+
+.l--sp_top-tiny {
+  margin-top: .5em;
+}
+
+//** TEXT **//
+
+.t--tiny {
+  font-size: .8em;
+}
+
+.t--medium {
+  font-size: 2em;
+}
+
+.t--huge {
+  font-size: 3.5em;
+}
+
+.t--italic {
+  font-style: italic;
+}
+
+.t--bold {
+  font-weight: bold;
+}
+
+.t--underline {
+  text-decoration: underline;
+}
+
+.t--action {
+  &:hover {
+    color: darken($c--brand_dark, 15%);
+    text-decoration: underline;
+  }
+}
+
+//** HELPERS **//
+
+.h--top-line-art {
+  position: relative;
+  padding-top: 1em;
+
+  &:before {
+    background-color: $c--brand_dark;
+    content: "";
+    display: inline-block;
+    width: 20%;
+    height: 0.1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
