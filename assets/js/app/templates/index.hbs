@@ -1,12 +1,8 @@
-<hr>
-
-<div>
+<section>
   <p>{{currentPost.primary_content}}</p>
-  <div>{{#link-to "post" currentPost }}{{formatDate currentPost.creationDate}}{{/link-to}}</div>
-</div>
-
-<hr>
+  {{#link-to "post" currentPost }}—Week No. {{weekNumber}}{{/link-to}}
+</section>
 
 <footer>
-  {{#link-to "posts"}}More weekjuices{{/link-to}}
+  <p>A tiny project by <a href="http://twitter.com/neilrenicker" title="Neil Renicker on Twitter">Neil Renicker</a>.</p>
 </footer>
