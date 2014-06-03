@@ -3,7 +3,7 @@
   "description": "One doable, weekly goal for developers who want to be impressive at work.",
   "version": "0.0.1",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "firebase": "^1.0.15",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
@@ -14,6 +14,9 @@
     "request-json": "^0.4.10"
   },
   "engines": {
-    "node": "0.10.28"
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "postinstall": "grunt"
   }
 }
