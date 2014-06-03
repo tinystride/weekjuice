@@ -12,5 +12,8 @@
     "grunt-ember-templates": "*",
     "node-schedule": "^0.1.13",
     "request-json": "^0.4.10"
+  },
+  "engines": {
+    "node": "0.10.28"
   }
 }
