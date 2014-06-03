@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "express": "^4.1.1",
     "firebase": "^1.0.15",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
