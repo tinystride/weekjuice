@@ -18,6 +18,6 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/grunt"
+    "postinstall": "bundle install && grunt"
   }
 }
