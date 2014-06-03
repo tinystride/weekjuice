@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^1.0.15",
+    "grunt-cli": "^0.1.13",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-sass": "~0.4.1",
