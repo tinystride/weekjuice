@@ -1,10 +1,11 @@
 body {
-  background-color: #b8ecb3;
+  background-color: $c--brand;
   margin: 0;
   font-family: sans-serif;
+  padding-bottom: 3em;
 
   &, a {
-  color: #455643;
+    color: $c--brand_dark;
   }
 }
 

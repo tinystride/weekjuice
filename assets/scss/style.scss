@@ -1,11 +1,17 @@
-@import "_inbox";
+//** VARIABLES **//
 
-@import "_reset";
+$c--brand: #b8ecb3;
+$c--brand_dark: #455643;
+
+@import 'compass';
+
+@import '_inbox';
+@import '_reset';
 
 $site-max-width: 55em;
 $bp-small: 35em;
 
-// layout
+//** LAYOUT **//
 
 .l--container {
   margin: 0 1em;
@@ -28,7 +34,7 @@ $bp-small: 35em;
 }
 
 .l--sp_top-large {
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .l--sp_top-med {
@@ -39,14 +45,22 @@ $bp-small: 35em;
   margin-top: .5em;
 }
 
-// text
+//** TEXT **//
 
 .t--tiny {
   font-size: .8em;
 }
 
+.t--medium {
+  font-size: 2em;
+}
+
 .t--huge {
   font-size: 3.5em;
+}
+
+.t--italic {
+  font-style: italic;
 }
 
 .t--bold {
@@ -55,4 +69,29 @@ $bp-small: 35em;
 
 .t--underline {
   text-decoration: underline;
+}
+
+.t--action {
+  &:hover {
+    color: darken($c--brand_dark, 15%);
+    text-decoration: underline;
+  }
+}
+
+//** HELPERS **//
+
+.h--top-line-art {
+  position: relative;
+  padding-top: 1em;
+
+  &:before {
+    background-color: $c--brand_dark;
+    content: "";
+    display: inline-block;
+    width: 20%;
+    height: 0.1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

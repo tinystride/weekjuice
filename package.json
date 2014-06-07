@@ -8,8 +8,8 @@
     "grunt-cli": "^0.1.13",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-sass": "~0.4.1",
     "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-compass": "^0.8.0",
     "grunt-ember-templates": "*",
     "node-schedule": "^0.1.13",
     "request-json": "^0.4.10"
