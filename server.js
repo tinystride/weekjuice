@@ -60,11 +60,23 @@ var APP = {
     ) {
 
     var currentPostSetRef = new Firebase('https://glowing-fire-6569.firebaseio.com/currentPost');
-    currentPostSetRef.child('creationDate').set(currentPostCreationDate);
-    currentPostSetRef.child('primary_content').set(currentPostPrimaryContent);
-    currentPostSetRef.child('sourceNote').set(currentPostSourceNote);
-    currentPostSetRef.child('sourceTitle').set(currentPostSourceTitle);
-    currentPostSetRef.child('sourceUrl').set(currentPostSourceUrl);
+    currentPostSetRef.remove();
+
+    if (currentPostCreationDate) {
+      currentPostSetRef.child('creationDate').set(currentPostCreationDate);
+    }
+    if (currentPostPrimaryContent) {
+      currentPostSetRef.child('primary_content').set(currentPostPrimaryContent);
+    }
+    if (currentPostSourceNote) {
+      currentPostSetRef.child('sourceNote').set(currentPostSourceNote);
+    }
+    if (currentPostSourceTitle) {
+      currentPostSetRef.child('sourceTitle').set(currentPostSourceTitle);
+    }
+    if (currentPostSourceUrl) {
+      currentPostSetRef.child('sourceUrl').set(currentPostSourceUrl);
+    }
   },
 
   // set up node-schedule job:
