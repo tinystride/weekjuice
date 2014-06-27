@@ -10,25 +10,25 @@ try {
 api.call('campaigns', 'create', {
   type:"regular",
   options:{
-    list_id:"744341", // check this
+    list_id:"19af871d05",
     subject:"This week on weekjuice",
     from_email:"neilrenicker@gmail.com",
     from_name:"Neil Renicker",
     to_name:"Neil Renicker",
-    template_id:285117,
+    template_id:285541,
     folder_id:32125,
     tracking:{
       opens:true,
       html_clicks:true,
       text_clicks:true
     },
-    auto_footer:true, // check this
+    auto_footer:false,
     generate_text:true
   },
   content:{
     sections:{
-      CURRENTPOST_CONTENT:"This will be the post content!", // check this
-      CURRENTPOST_PERMALINK:"Permalink" // check this
+      post_content:"Time to dance.",
+      post_link:"<a href=\"http://weekjuice.com\" style=\"color: #455643;\" target=\"_blank\" title=\"View this week\'s post on weekjuice.com\">—Week No. 400</a>"
     }
   }
 }, function (error, data) {
