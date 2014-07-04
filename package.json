@@ -4,19 +4,11 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "firebase": "^1.0.15",
     "grunt": "~0.4.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-compass": "^0.8.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-watch": "~0.4.4",
-    "grunt-ember-templates": "*",
-    "mailchimp": "^1.1.0",
-    "moment": "^2.7.0",
-    "node-schedule": "^0.1.13",
-    "request-json": "^0.4.10"
-  },
-  "engines": {
-    "node": "0.10.x"
+    "grunt-ember-templates": "*"
   }
 }

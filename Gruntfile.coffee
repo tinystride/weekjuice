@@ -5,49 +5,49 @@ module.exports = (grunt) ->
     compass:
       dist:
         options:
-          sassDir: 'assets/scss'
-          cssDir: 'assets/css'
+          sassDir: 'scss'
+          cssDir: 'css'
 
     emberTemplates:
       compile:
         options:
-          templateBasePath: /assets\/js\/app\/templates\//
+          templateBasePath: /js\/app\/templates\//
 
         files:
-          "assets/js/templates.js": "assets/js/app/templates/**/*.hbs"
+          "js/templates.js": "js/app/templates/**/*.hbs"
 
     concat:
       libs:
         src: [
-          "assets/js/libs/jquery-2.0.3.min.js"
-          "assets/js/libs/handlebars-1.0.0.js"
-          "assets/js/libs/ember-1.1.2.js"
-          "assets/js/libs/ember-data-1.0.0-beta.3.js"
-          "assets/js/libs/localstorage_adapter.js"
-          "assets/js/libs/moment.min.js"
-          "assets/js/libs/emberfire.js"
+          "js/libs/jquery-2.0.3.min.js"
+          "js/libs/handlebars-1.0.0.js"
+          "js/libs/ember-1.1.2.js"
+          "js/libs/ember-data-1.0.0-beta.3.js"
+          "js/libs/localstorage_adapter.js"
+          "js/libs/moment.min.js"
+          "js/libs/emberfire.js"
         ]
-        dest: "assets/js/libs.js"
+        dest: "js/libs.js"
 
       app:
-        src: "assets/js/app/**/*.js"
-        dest: "assets/js/app.js"
+        src: "js/app/**/*.js"
+        dest: "js/app.js"
 
     watch:
       sass:
-        files: "assets/scss/*.scss"
+        files: "scss/*.scss"
         tasks: ["compass"]
 
       emberTemplates:
-        files: "assets/js/app/templates/**/*.hbs"
+        files: "js/app/templates/**/*.hbs"
         tasks: ["emberTemplates"]
 
       concat:
         files: [
-          "assets/js/**/*.js"
-          "!assets/js/app.js"
-          "!assets/js/libs.js"
-          "!assets/js/templates.js"
+          "js/**/*.js"
+          "!js/app.js"
+          "!js/libs.js"
+          "!js/templates.js"
         ]
         tasks: ["concat"]
 
