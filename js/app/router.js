@@ -1,7 +1,9 @@
 App.Router.map(function(){
-  this.route('posts');
-  this.resource('post', { path:'/posts/:post_id' }, function(){
-    this.route('edit');
-  });
-  this.route('create');
+  this.resource('post', { path:'/:post_id' });
+  this.route('purpose');
+});
+
+// Remove hash url routing:
+App.Router.reopen({
+  location: 'history'
 });

@@ -1,11 +1,19 @@
+html {
+  @include box-sizing(border-box);
+}
+
+*, *:after, *:before {
+  @include box-sizing(inherit);
+}
+
 body {
-  background-color: $c--brand;
+  background-color: $green;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "proxima-nova", sans-serif;
   padding-bottom: 3em;
 
   &, a {
-    color: $c--brand_dark;
+    color: $green_dark;
   }
 }
 
@@ -14,6 +22,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
   margin: 0;
 }
 

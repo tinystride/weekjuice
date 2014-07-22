@@ -1,6 +1,7 @@
 window.App = Ember.Application.create({
-  LOG_TRANSITIONS: true
+  LOG_TRANSITIONS: false
 });
+
 App.ApplicationController = Ember.ArrayController.extend({
   sortProperties: ['creationDate'],
 
@@ -33,12 +34,17 @@ App.IndexController = Ember.ArrayController.extend({
 App.PostsController = Ember.ArrayController.extend({
   needs: ['application']
 });
+
 Ember.Handlebars.helper('formatDate', function(date){
   return moment(date).format('MMMM DD, YYYY');
 });
 
 Ember.Handlebars.helper('weekNumber', function(){
   return moment.utc().format('ww');
+});
+
+Ember.Handlebars.helper('currentFullDate', function(){
+  return moment.utc().format('dddd MMMM DD, YYYY');
 });
 
 App.Post = DS.Model.extend({
@@ -49,11 +55,13 @@ App.Post = DS.Model.extend({
   creationDate: DS.attr()
 })
 App.Router.map(function(){
-  this.route('posts');
-  this.resource('post', { path:'/posts/:post_id' }, function(){
-    this.route('edit');
-  });
-  this.route('create');
+  this.resource('post', { path:'/:post_id' });
+  this.route('purpose');
+});
+
+// Remove hash url routing:
+App.Router.reopen({
+  location: 'history'
 });
 
 App.ApplicationRoute = Ember.Route.extend({
@@ -66,6 +74,7 @@ App.PostsRoute = Ember.Route.extend({
     return this.modelFor('application');
   }
 });
+
 App.ApplicationAdapter = DS.FirebaseAdapter.extend({
   firebase: new Firebase("https://glowing-fire-6569.firebaseio.com/")
 });

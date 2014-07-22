@@ -5,3 +5,7 @@ Ember.Handlebars.helper('formatDate', function(date){
 Ember.Handlebars.helper('weekNumber', function(){
   return moment.utc().format('ww');
 });
+
+Ember.Handlebars.helper('currentFullDate', function(){
+  return moment.utc().format('dddd MMMM DD, YYYY');
+});
