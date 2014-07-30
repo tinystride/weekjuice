@@ -1,7 +1,27 @@
-<div class="l--container l--max-width l--sp_top-med">
-  <h1>{{#link-to "index"}}weekjuice{{/link-to}}</h1>
-  <div class="t--tiny l--sp_top-tiny">One doable, weekly goal for developers who want to be impressive at work.</div>
+<header class="primary-nav">
+  <div class="container max-width relative">
+    <h1 class="primary-nav--logo">{{#link-to "index"}}weekjuice{{/link-to}}</h1>
+    <p class="primary-nav--message">
+      Today is {{currentFullDate}}. Make it great.
+    </p>
+  </div>
+</header>
+
+<div class="container max-width">
+  <h2 class="header-message">
+    One <span class="text-bold">tiny goal</span> each week for developers who
+    dread getting <span class="text-bold">stagnant</span> at work.
+  </h2>
 
   {{outlet}}
 
+  <footer class="space-above_5">
+    <small class="footer--peace-out-yo">
+      A tiny project by <a class="text-underline text-action"
+        href="http://twitter.com/neilrenicker"
+        title="Neil Renicker on Twitter">
+      Neil Renicker</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="text-underline text-action" href="/#/purpose"
+        title="What's this for?">/purpose</a>
+    </small>
+  </footer>
 </div>

@@ -1,8 +1,48 @@
-<article class="l--sp_top-large">
-  <p class="t--huge t--bold h--top-line-art">{{currentPost.primary_content}}</p>
-  {{#link-to "post" currentPost classNames="l--sp_top-med l--block t--action t--medium t--italic"}}—Week No. {{weekNumber}}{{/link-to}}
+<article class="post--container">
+  <p class="post">
+    {{currentPost.primary_content}}
+  </p>
+  {{#link-to "post" currentPost classNames="post--permalink"}}
+    —Week No. {{weekNumber}}
+  {{/link-to}}
 </article>
 
-<footer class="l--sp_top-large">
-  <p class="t--tiny">A tiny project by <a class="t--underline t--action" href="http://twitter.com/neilrenicker" title="Neil Renicker on Twitter">Neil Renicker</a>.</p>
-</footer>
+<section class="signup-callout clearfix">
+  <h2 class="signup-callout--title">Be your best every week</h2>
+  <p class="signup-callout--message">
+    You want to be the best at your job, but it's hard to stay motivated.
+    <span class="text-bold">weekjuice</span> is a simple weekly reminder
+    to keep doing the kinds of things that really matter as a passionate
+    developer and designer. It's a tiny, friendly nudge to help you be
+    impressive at work.
+  </p>
+  <!-- MailChimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form action="//neilrenicker.us2.list-manage.com/subscribe/post?u=6bf71f04542da9cf38cb16ea1&amp;id=19af871d05"
+      method="post" id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form" class="signup-form"
+      target="_blank" novalidate>
+      <div class="mc-field-group">
+        <label class="signup-form--label block space-above_2" for="mce-EMAIL">
+          Your Email Address Goes Here
+        </label>
+        <input type="email" value="" name="EMAIL"
+          class="signup-form--input space-above_1"
+          id="mce-EMAIL">
+      </div>
+      <!-- Prevent bot signups: -->
+      <div id="mce-responses">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>
+      <div style="position: absolute; left: -5000px;"><input type="text" name="b_6bf71f04542da9cf38cb16ea1_19af871d05" tabindex="-1" value=""></div>
+      <div class="space-above_1">
+        <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="signup-form--button button_positive">
+        <span class="signup-form--helptext">
+          You'll be able to unsubscribe with one click at any time.
+        </span>
+      </div>
+    </form>
+  </div>
+  <!--End MailChimp Signup Form -->
+</section>

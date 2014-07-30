@@ -9,13 +9,16 @@ function program1(depth0,data) {
   data.buffer.push("weekjuice");
   }
 
-  data.buffer.push("<div class=\"l--container l--max-width l--sp_top-med\">\n  <h1>");
+  data.buffer.push("<header class=\"primary-nav\">\n  <div class=\"container max-width relative\">\n    <h1 class=\"primary-nav--logo\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h1>\n  <div class=\"t--tiny l--sp_top-tiny\">One doable, weekly goal for developers who want to be impressive at work.</div>\n\n  ");
+  data.buffer.push("</h1>\n    <p class=\"primary-nav--message\">\n      Today is ");
+  stack1 = helpers._triageMustache.call(depth0, "currentFullDate", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(". Make it great.\n    </p>\n  </div>\n</header>\n\n<div class=\"container max-width\">\n  <h2 class=\"header-message\">\n    One <span class=\"text-bold\">tiny goal</span> each week for developers who\n    dread getting <span class=\"text-bold\">stagnant</span> at work.\n  </h2>\n\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n</div>\n");
+  data.buffer.push("\n\n  <footer class=\"space-above_5\">\n    <small class=\"footer--peace-out-yo\">\n      A tiny project by <a class=\"text-underline text-action\"\n        href=\"http://twitter.com/neilrenicker\"\n        title=\"Neil Renicker on Twitter\">\n      Neil Renicker</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class=\"text-underline text-action\" href=\"/#/purpose\"\n        title=\"What's this for?\">/purpose</a>\n    </small>\n  </footer>\n</div>\n");
   return buffer;
   
 });
@@ -28,21 +31,22 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("—Week No. ");
+  data.buffer.push("\n    —Week No. ");
   stack1 = helpers._triageMustache.call(depth0, "weekNumber", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  ");
   return buffer;
   }
 
-  data.buffer.push("<article class=\"l--sp_top-large\">\n  <p class=\"t--huge t--bold h--top-line-art\">");
+  data.buffer.push("<article class=\"post--container\">\n  <p class=\"post\">\n    ");
   stack1 = helpers._triageMustache.call(depth0, "currentPost.primary_content", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n  ");
+  data.buffer.push("\n  </p>\n  ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{
-    'classNames': ("l--sp_top-med l--block t--action t--medium t--italic")
+    'classNames': ("post--permalink")
   },hashTypes:{'classNames': "STRING"},hashContexts:{'classNames': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "post", "currentPost", options) : helperMissing.call(depth0, "link-to", "post", "currentPost", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</article>\n\n<footer class=\"l--sp_top-large\">\n  <p class=\"t--tiny\">A tiny project by <a class=\"t--underline t--action\" href=\"http://twitter.com/neilrenicker\" title=\"Neil Renicker on Twitter\">Neil Renicker</a>.</p>\n</footer>\n");
+  data.buffer.push("\n</article>\n\n<section class=\"signup-callout clearfix\">\n  <h2 class=\"signup-callout--title\">Be your best every week</h2>\n  <p class=\"signup-callout--message\">\n    You want to be the best at your job, but it's hard to stay motivated.\n    <span class=\"text-bold\">weekjuice</span> is a simple weekly reminder\n    to keep doing the kinds of things that really matter as a passionate\n    developer and designer. It's a tiny, friendly nudge to help you be\n    impressive at work.\n  </p>\n  <!-- MailChimp Signup Form -->\n  <div id=\"mc_embed_signup\">\n    <form action=\"//neilrenicker.us2.list-manage.com/subscribe/post?u=6bf71f04542da9cf38cb16ea1&amp;id=19af871d05\"\n      method=\"post\" id=\"mc-embedded-subscribe-form\"\n      name=\"mc-embedded-subscribe-form\" class=\"signup-form\"\n      target=\"_blank\" novalidate>\n      <div class=\"mc-field-group\">\n        <label class=\"signup-form--label block space-above_2\" for=\"mce-EMAIL\">\n          Your Email Address Goes Here\n        </label>\n        <input type=\"email\" value=\"\" name=\"EMAIL\"\n          class=\"signup-form--input space-above_1\"\n          id=\"mce-EMAIL\">\n      </div>\n      <!-- Prevent bot signups: -->\n      <div id=\"mce-responses\">\n        <div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>\n        <div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>\n      </div>\n      <div style=\"position: absolute; left: -5000px;\"><input type=\"text\" name=\"b_6bf71f04542da9cf38cb16ea1_19af871d05\" tabindex=\"-1\" value=\"\"></div>\n      <div class=\"space-above_1\">\n        <input type=\"submit\" value=\"Submit\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"signup-form--button button_positive\">\n        <span class=\"signup-form--helptext\">\n          You'll be able to unsubscribe with one click at any time.\n        </span>\n      </div>\n    </form>\n  </div>\n  <!--End MailChimp Signup Form -->\n</section>\n");
   return buffer;
   
 });
@@ -50,92 +54,23 @@ function program1(depth0,data) {
 Ember.TEMPLATES["post"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+  var buffer = '', stack1;
 
-function program1(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n    <p><b>Note:</b> <i>");
-  stack1 = helpers._triageMustache.call(depth0, "sourceNote", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</i></p>\n    <a target=\"_blank\" ");
-  data.buffer.push(escapeExpression((helper = helpers.bindAttr || (depth0 && depth0.bindAttr),options={hash:{
-    'href': ("sourceUrl")
-  },hashTypes:{'href': "STRING"},hashContexts:{'href': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "bindAttr", options))));
-  data.buffer.push(">");
-  stack1 = helpers._triageMustache.call(depth0, "sourceTitle", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</a>\n  ");
-  return buffer;
-  }
 
-  data.buffer.push("<article class=\"l--sp_top-large\">\n  <p class=\"t--huge t--bold\">");
+  data.buffer.push("<article class=\"post--container\">\n  <p class=\"post\">\n    ");
   stack1 = helpers._triageMustache.call(depth0, "primary_content", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n\n  ");
-  stack1 = helpers['if'].call(depth0, "sourceNote", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</article>\n");
+  data.buffer.push("\n  </p>\n</article>\n");
   return buffer;
   
 });
 
-Ember.TEMPLATES["posts"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+Ember.TEMPLATES["purpose"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+  
 
-function program1(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n    <li>\n      <p>");
-  stack1 = helpers._triageMustache.call(depth0, "post.primary_content", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n      ");
-  stack1 = helpers['if'].call(depth0, "post.sourceNote", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n      <div>Posted ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "post", "post", options) : helperMissing.call(depth0, "link-to", "post", "post", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</div>\n    </li>\n  ");
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n        <p><b>Note:</b> <i>");
-  stack1 = helpers._triageMustache.call(depth0, "post.sourceNote", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</i></p>\n        <a target=\"_blank\" ");
-  data.buffer.push(escapeExpression((helper = helpers.bindAttr || (depth0 && depth0.bindAttr),options={hash:{
-    'href': ("post.sourceUrl")
-  },hashTypes:{'href': "STRING"},hashContexts:{'href': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "bindAttr", options))));
-  data.buffer.push(">");
-  stack1 = helpers._triageMustache.call(depth0, "post.sourceTitle", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</a>\n      ");
-  return buffer;
-  }
 
-function program4(depth0,data) {
-  
-  var helper, options;
-  data.buffer.push(escapeExpression((helper = helpers.formatDate || (depth0 && depth0.formatDate),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "creationDate", options) : helperMissing.call(depth0, "formatDate", "creationDate", options))));
-  }
-
-function program6(depth0,data) {
-  
-  
-  data.buffer.push("\n    <li>\n      <p>ack! no posts.</p>\n    </li>\n  ");
-  }
-
-  data.buffer.push("<div class=\"posts-listing\">\n  <ul>\n  ");
-  stack1 = helpers.each.call(depth0, "post", "in", "controller", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </ul>\n\n  ");
-  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n</div>");
-  return buffer;
+  data.buffer.push("<div class=\"strong-content space-above_3\">\n  <h2 class=\"strong-content--title text-purple\">/purpose</h2>\n  <div class=\"font-secondary\">\n    <p>\n      Meditation is an ancient practice. It's the art of focusing on a few things\n      long enough to impress them upon your conscious thought.\n    </p>\n    <p>\n      <span class=\"text-bold\">weekjuice</span> is one simple goal or assertion\n      for you to meditate on at the beginning of the week, sent to your\n      email inbox.\n    </p>\n    <p>\n      I have a habit of collecting little ways of thinking that help me focus\n      on some quality or skill I want to develop. The problem is, I can't keep\n      them all in my head. If I make a big list, I don't process any of them.\n    </p>\n    <p>\n      I need a slow, steady drip. I need to focus on one quality every week.\n      That's <span class=\"text-bold\">weekjuice</span>.\n    </p>\n    <p>\n      I made <span class=\"text-bold\">weekjuice</span> for myself, because\n      I wanted it to exist. If you like it too, that's all the better.\n    </p>\n  </div>\n  &#x2665; <a class=\"text-italic\" href=\"http://neilrenicker.com\"\n    title=\"My personal website\">Neil Renicker</a>\n</div>\n");
   
 });
