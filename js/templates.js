@@ -9,6 +9,12 @@ function program1(depth0,data) {
   data.buffer.push("weekjuice");
   }
 
+function program3(depth0,data) {
+  
+  
+  data.buffer.push("\n        /purpose\n      ");
+  }
+
   data.buffer.push("<header class=\"primary-nav\">\n  <div class=\"container max-width relative\">\n    <h1 class=\"primary-nav--logo\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
@@ -18,7 +24,13 @@ function program1(depth0,data) {
   data.buffer.push(". Make it great.\n    </p>\n  </div>\n</header>\n\n<div class=\"container max-width\">\n  <h2 class=\"header-message\">\n    One <span class=\"text-bold\">tiny goal</span> each week for developers who\n    dread getting <span class=\"text-bold\">stagnant</span> at work.\n  </h2>\n\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n  <footer class=\"space-above_5\">\n    <small class=\"footer--peace-out-yo\">\n      A tiny project by <a class=\"text-underline text-action\"\n        href=\"http://twitter.com/neilrenicker\"\n        title=\"Neil Renicker on Twitter\">\n      Neil Renicker</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class=\"text-underline text-action\" href=\"/#/purpose\"\n        title=\"What's this for?\">/purpose</a>\n    </small>\n  </footer>\n</div>\n");
+  data.buffer.push("\n\n  <footer class=\"space-above_5\">\n    <small class=\"footer--peace-out-yo\">\n      A tiny project by <a class=\"text-underline text-action\"\n        href=\"http://twitter.com/neilrenicker\"\n        title=\"Neil Renicker on Twitter\">\n      Neil Renicker</a>\n      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\n      ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{
+    'class': ("text-underline text-action"),
+    'title': ("What's this for?")
+  },hashTypes:{'class': "STRING",'title': "STRING"},hashContexts:{'class': depth0,'title': depth0},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "purpose", options) : helperMissing.call(depth0, "link-to", "purpose", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </small>\n  </footer>\n</div>\n");
   return buffer;
   
 });
