@@ -59,11 +59,6 @@ App.Router.map(function(){
   this.route('purpose');
 });
 
-// Remove hash url routing:
-App.Router.reopen({
-  location: 'history'
-});
-
 App.ApplicationRoute = Ember.Route.extend({
   model: function(){
     return this.store.find('post');
