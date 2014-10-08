@@ -1,4 +1,4 @@
-# weekjuice API
+# [weekjuice](http://weekjuice.com)
 *One doable, weekly goal for developers who want to be impressive at work.*
 
 ![Weekjuice screenshot](http://f.cl.ly/items/3H2g3O3g0y2c2F0P361Q/weekjuice-screenshot.png)
