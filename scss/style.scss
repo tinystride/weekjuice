@@ -162,6 +162,9 @@ $bp-small: 35em;
 //** BUTTONS **//
 
 %button-base {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   display: inline-block;
   padding: 0.6em 1.3em;
   margin-bottom: 0;
