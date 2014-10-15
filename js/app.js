@@ -23,7 +23,11 @@ App.ApplicationController = Ember.ArrayController.extend({
     };
 
     return this.findBy('id', currentPostId);
-  }.property('@each.id', 'currentPostId')
+  }.property('@each.id', 'currentPostId'),
+
+  currentPathChanged: function() {
+    window.scrollTo(0,0);
+  }.observes('currentPath')
 });
 
 App.IndexController = Ember.ArrayController.extend({
