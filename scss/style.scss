@@ -257,6 +257,15 @@ $bp-small: 35em;
   @media(min-width: $bp-small) {
     font-size: 4.2rem;
   }
+
+  a {
+    @include transition(opacity 100ms ease-in-out);
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 .post--permalink {
