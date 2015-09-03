@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-ember-templates": "*"
+    "grunt": "0.4.1",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-compass": "0.8.0",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-watch": "0.4.4",
+    "grunt-ember-templates": "0.4.22"
   }
 }
